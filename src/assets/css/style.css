@@ -1,16 +1,24 @@
 
 .header {
   height: 50px;
+}
+
+.float {
+  height: 50px;
   padding: 0 10px;
-  background-color: rgba(0,0,0,.1);
+  background-color: rgba(204,204,204,.95);
   display: flex;
   justify-content: start;
   align-items: center;
+  position: fixed;
+  width: 100vw;
+  z-index: 9;
 }
 
 .container {
   padding: 10px 40px;
   text-align: left;
+  height: 100vh;
 }
 
 .footer {

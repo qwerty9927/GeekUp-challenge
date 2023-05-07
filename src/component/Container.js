@@ -76,15 +76,11 @@ function Container() {
     }))
   }
 
-  const handleLoading = (index, boolean) => {
+  const handleMarkDone = async (taskId, index) => {
     setIsLoadingMarkDone(preState => {
-      preState[index] = boolean
+      preState[index] = true
       return [...preState]
     })
-  }
-
-  const handleMarkDone = async (taskId, index) => {
-    handleLoading(index, true)
     const { status, data } = await patchTask(taskId)
     if (status === 200) {
       setTasks((preState) => {
@@ -95,7 +91,11 @@ function Container() {
         })
         return [...listExcluded, data]
       })
-      handleLoading(index, false)
+      setIsLoadingMarkDone(preState => {
+        preState[index] = false
+        return [...preState]
+      })
+      setAmountTasksDone(amountTaskDone + 1)
     }
   }
 
