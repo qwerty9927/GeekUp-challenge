@@ -1,0 +1,21 @@
+
+.header {
+  height: 50px;
+  padding: 0 10px;
+  background-color: rgba(0,0,0,.1);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.container {
+  padding: 10px 40px;
+  text-align: left;
+}
+
+.footer {
+  height: 100px;
+  line-height: 100px;
+  background-color: #181821;
+  color: #fff;
+}
